@@ -1,0 +1,38 @@
+[01-Aug-2016 23:15:57 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[01-Aug-2016 23:15:57 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[07-Aug-2016 22:32:33 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[07-Aug-2016 22:32:33 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[11-Aug-2016 23:04:00 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[11-Aug-2016 23:04:00 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[12-Aug-2016 08:35:22 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[12-Aug-2016 08:35:22 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[12-Aug-2016 15:52:02 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[12-Aug-2016 15:52:02 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[13-Aug-2016 10:56:52 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[13-Aug-2016 10:56:52 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 17:40:46 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 17:40:46 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 22:08:01 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 22:08:01 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 22:31:40 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[14-Aug-2016 22:31:40 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 14:00:18 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 14:00:18 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 20:22:21 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 20:22:21 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 20:56:41 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[15-Aug-2016 20:56:41 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[17-Aug-2016 09:51:12 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[17-Aug-2016 09:51:12 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[17-Aug-2016 22:22:01 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[17-Aug-2016 22:22:01 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[23-Aug-2016 07:01:02 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[23-Aug-2016 07:01:02 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[23-Aug-2016 07:56:39 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/lavoine/public_html/admin@@/index.php on line 64
+[23-Aug-2016 07:56:39 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/lavoine/public_html/admin@@/index.php on line 64
+[28-Oct-2016 09:37:37 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 't4vietnam'@'localhost' (using password: NO) in /home/t4vietnam/public_html/admin@@/index.php on line 64
+[28-Oct-2016 09:37:37 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/t4vietnam/public_html/admin@@/index.php on line 64
+[28-Oct-2016 09:37:52 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 't4vietnam'@'localhost' (using password: NO) in /home/t4vietnam/public_html/admin@@/index.php on line 64
+[28-Oct-2016 09:37:52 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/t4vietnam/public_html/admin@@/index.php on line 64
+[28-Oct-2016 10:10:37 Asia/Saigon] PHP Warning:  mysql_query(): Access denied for user 't4vietnam'@'localhost' (using password: NO) in /home/t4vietnam/public_html/admin@@/index.php on line 64
+[28-Oct-2016 10:10:37 Asia/Saigon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/t4vietnam/public_html/admin@@/index.php on line 64

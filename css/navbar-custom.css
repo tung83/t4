@@ -1,0 +1,47 @@
+.navbar{
+    border:none;
+    background:transparent;
+    margin:0;
+    padding:0
+}
+.navbar .navbar-brand{
+
+}
+.navbar .navbar-nav li{
+    padding:0  ;
+    margin:0 !important;
+}
+.navbar .navbar-nav li a{
+    text-transform:uppercase;
+    font-family:'Myriadpro-Regular';
+    font-size:15px;
+    color:#2aa499;
+    margin:0 !important
+}
+.navbar .navbar-nav li:hover a,.navbar .navbar-nav li.active:hover a,.navbar .navbar-nav li.active a{
+    color:#3bc9bc;
+    background:none;
+    border-bottom:2px solid #3bc9bc
+}
+.navbar .navbar-right li:hover a{
+    border-bottom:none
+}
+/*My Define*/
+@media(max-width:991px){
+    .navbar{
+        
+    }
+}
+@media(min-width:992px){
+    .navbar .navbar-brand{
+        display:block;
+        position:relative;
+        width:200px;
+    }
+    .navbar .navbar-brand img{
+        position:absolute;
+        top:-30px;
+        left:0px
+    }
+}
+/*My Define*/
