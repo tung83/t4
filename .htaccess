@@ -15,7 +15,7 @@ RewriteRule ^(vi|en)$ index.php?lang=$1
 RewriteRule ^(vi|en)/([0-9]+)$ index.php?lang=$1&page=$2
 RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)$ index.php?lang=$1&view=$2
 RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?lang=$1&view=$2&pId=$4
-
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-i([0-9]+)$ index.php?lang=$1&view=$2&id=$4
 #product paging
 RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)$ index.php?&view=$1&page=$2
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)/([0-9]+)$ index.php?&view=$1&pId=$3&page=$4
