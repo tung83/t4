@@ -41,7 +41,7 @@ function menu($db,$lang,$view){
     foreach($list as $item){
         $vw=($lang=='en')?$item['e_view']:$item['view'];
         $title=($lang=='en')?$item['e_title']:$item['title'];
-        $lnk=myWeb.$vw.'/'.common::slug($vw);
+        $lnk=myWeb.common::slug($vw);
         $active=($view==$vw)?' class="active"':'';        
         $str.='
         <li'.$active.'><a href="'.$lnk.'">'.$title.'</a></li>';
