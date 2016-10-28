@@ -347,7 +347,7 @@ class product{
             <div id="tabs" class="tabs">
                 <ul>
                     <li><a href="#tabs-1">MÔ TẢ CHI TIẾT</a></li>
-                    <li><a href="#tabs-2">Bình Luận</a></li>
+                    <li><a href="#tabs-2">BÌNH LUẬN</a></li>
                     <!--li><a href="#tabs-3">GHI CHÚ</a></li>
                     <li><a href="#tabs-4">BÌNH LUẬN</a></li-->
                 </ul>
