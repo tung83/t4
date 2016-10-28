@@ -53,7 +53,7 @@ class search{
     function breadcrumb(){
         $str.='
         <ul class="breadcrumb clearfix">
-        	<li><a href="'.myWeb.'"><i class="fa fa-home"></i></a></li>
+        	<li><a href="'.myWeb.$this->lang.'/"><i class="fa fa-home"></i></a></li>
             <li><a>Tìm kiếm</a></li>';
         $str.='
         </ul>';

@@ -11,18 +11,18 @@ RewriteBase /
 RewriteCond %{ENV:REDIRECT_STATUS} 200
 RewriteRule .* - [L]
 
-RewriteRule ^([0-9]+)$ index.php?page=$1
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?&view=$1
+RewriteRule ^(vi|en)$ index.php?lang=$1
+RewriteRule ^(vi|en)/([0-9]+)$ index.php?lang=$1&page=$2
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)$ index.php?lang=$1&view=$2
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?lang=$1&view=$2&pId=$4
+
 #product paging
 RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)$ index.php?&view=$1&page=$2
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)/([0-9]+)$ index.php?&view=$1&pId=$3&page=$4
 
-#RewriteRule ^([0-9]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&view=$2
-
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-i([0-9]+)$ index.php?view=$1&id=$3
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-cate([0-9]+)$ index.php?view=$1&cate_id=$3
 
-RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?view=$1&pId=$3
 #RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?view=$1&page=$2
 
 RewriteRule ^tim-kiem/(.*)$ index.php?view=tim-kiem&hint=$1

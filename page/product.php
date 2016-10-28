@@ -152,12 +152,12 @@ class product{
         $pg->paginationcss = "pagination-large";
         $pg->paginationstyle = 1; // 1: advance, 0: normal
         if(!$pId || $pId==0){
-            $pg->defaultUrl = myWeb;
-            $pg->paginationUrl = myWeb."[p]#product-list";            
+            $pg->defaultUrl = myWeb.$this->lang.'/';
+            $pg->paginationUrl = myWeb.$this->lang.'/'."[p]#product-list";            
         }else{
             $cate=$this->db->where('id',$pId)->getOne('product_cate','id, title');
             
-            $pg->defaultUrl = myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->defaultUrl = myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
             $pg->paginationUrl = $pg->defaultUrl ."/[p]#product-list";
         }     
         $str.= '<div class="row">
@@ -198,7 +198,7 @@ class product{
         return $str;
     }
     function product_item($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $img=$this->first_image($item['id']);
         $str.='
         <div class="col-md-3 col-item5 wow fadeInLeft product-item text-center" data-wow-duration="2s">
@@ -215,7 +215,7 @@ class product{
         return $str;
     }
     function product_list_item($item,$type=1){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $img=$this->first_image($item['id']);
         if(trim($img)==='') $img='holder.js/400x300';else $img=webPath.$img;
         if($type==1){
@@ -262,7 +262,7 @@ class product{
                 $active='';
             }
             $str.='
-            <a href="'.myWeb.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'].'"'.$active.'>
+            <a href="'.myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'].'"'.$active.'>
                 '.$item['title'].'
             </a>';
         }

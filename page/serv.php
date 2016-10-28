@@ -19,14 +19,14 @@ class serv{
         $this->db->reset();
         $str.='
         <ul class="breadcrumb clearfix">
-        	<li><a href="'.myWeb.'"><i class="fa fa-home"></i></a></li>
-            <li><a href="'.myWeb.$this->view.'">'.$this->title.'</a></li>';
+        	<li><a href="'.myWeb.$this->lang.'/"><i class="fa fa-home"></i></a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'">'.$this->title.'</a></li>';
         if(isset($_GET['id'])){
             $this->db->where('id',intval($_GET['id']));
             $item=$this->db->getOne('serv','id,title,pId');
             $cate=$this->db->where('id',$item['pId'])->getOne('serv_cate','id,title');
             $str.='
-            <li><a href="'.myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
             <li><a href="#">'.$item['title'].'</a></li>';
         }elseif(isset($_GET['pId'])){
             $cate=$this->db->where('id',intval($_GET['pId']))->getOne('serv_cate','id,title');
@@ -38,7 +38,7 @@ class serv{
         return $str;
     }
     function serv_item($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str.='
         <a href="'.$lnk.'" class="about-item clearfix">
             <img src="'.webPath.$item['img'].'" class="img-responsive" alt="" title=""/>
@@ -72,12 +72,12 @@ class serv{
         $pg->paginationcss = "pagination-large";
         $pg->paginationstyle = 1; // 1: advance, 0: normal
         if($pId==0){
-            $pg->defaultUrl = myWeb.$this->view;
-            $pg->paginationUrl = myWeb.'[p]/'.$this->view;    
+            $pg->defaultUrl = myWeb.$this->lang.'/'.$this->view;
+            $pg->paginationUrl = myWeb.$this->lang.'/'.'[p]/'.$this->view;    
         }else{
             $cate=$this->db->where('id',$pId)->getOne('serv_cate','id,title');            
-            $pg->defaultUrl = myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
-            $pg->paginationUrl = myWeb.$this->view.'/[p]/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->defaultUrl = myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->paginationUrl = myWeb.$this->lang.'/'.$this->view.'/[p]/'.common::slug($cate['title']).'-p'.$cate['id'];
         }
         $str.= '<div class="pagination pagination-centered">'.$pg->process().'</div>';
         return $str;
@@ -100,7 +100,7 @@ class serv{
         <h2 class="title-tag"><span><b>Dịch Vụ</b></span></h2>
         <ul class="clearfix">';
         foreach($list as $item){
-            $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+            $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
             $str.='<li><a href="'.$lnk.'">'.$item['title'].'</a></li>';
         }
         $str.='
@@ -112,7 +112,7 @@ class serv{
         $this->db->reset();
         $this->db->where('id',$id);
         $item=$this->db->getOne('serv','id,img,title,sum');
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str='
         <div class="ind_serv">
             <a href="'.$lnk.'">

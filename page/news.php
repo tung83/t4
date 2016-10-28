@@ -20,14 +20,14 @@ class news{
         $str.='
         <div class="container">
         <ul class="breadcrumb clearfix">
-        	<li><a href="'.myWeb.'"><i class="fa fa-home"></i></a></li>
-            <li><a href="'.myWeb.$this->view.'">'.$this->title.'</a></li>';
+        	<li><a href="'.myWeb.$this->lang.'/"><i class="fa fa-home"></i></a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'">'.$this->title.'</a></li>';
         if(isset($_GET['id'])){
             $this->db->where('id',intval($_GET['id']));
             $item=$this->db->getOne('news','id,title,pId');
             $cate=$this->db->where('id',$item['pId'])->getOne('news_cate','id,title');
             $str.='
-            <li><a href="'.myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
             <li><a href="#">'.$item['title'].'</a></li>';
         }elseif(isset($_GET['pId'])){
             $cate=$this->db->where('id',intval($_GET['pId']))->getOne('news_cate','id,title');
@@ -83,7 +83,7 @@ class news{
         return $str;
     }
     function news_item($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str.='
         <a href="'.$lnk.'" class="about-item clearfix">
             <img src="'.webPath.$item['img'].'" class="img-responsive" alt="" title=""/>
@@ -111,11 +111,11 @@ class news{
         
         $pg=new Pagination(array('limit'=>limit,'count'=>$count,'page'=>$page,'type'=>0));        
         if($pId==0){
-            $pg->set_url(array('def'=>myWeb.$this->view,'url'=>myWeb.'[p]/'.$this->view));
+            $pg->set_url(array('def'=>myWeb.$this->lang.'/'.$this->view,'url'=>myWeb.$this->lang.'/'.'[p]/'.$this->view));
         }else{
             $cate=$this->db->where('id',$pId)->getOne('news_cate','id,title');       
-            $pg->defaultUrl = myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
-            $pg->paginationUrl = myWeb.$this->view.'/[p]/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->defaultUrl = myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->paginationUrl = myWeb.$this->lang.'/'.$this->view.'/[p]/'.common::slug($cate['title']).'-p'.$cate['id'];
         }
         $str.= '<div class="pagination-centered">'.$pg->process().'</div>';
         return $str;
@@ -135,7 +135,7 @@ class news{
         $this->db->reset();
         $this->db->where('id',$id);
         $item=$this->db->getOne('news','id,img,title,sum');
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str='
         <div class="ind_news">
             <a href="'.$lnk.'">

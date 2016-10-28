@@ -19,8 +19,8 @@ class video{
         $this->db->reset();
         $str.='
         <ul class="breadcrumb clearfix">
-        	<li><a href="'.myWeb.'"><i class="fa fa-home"></i></a></li>
-            <li><a href="'.myWeb.$this->view.'">Video Clips</a></li>';
+        	<li><a href="'.myWeb.$this->lang.'/"><i class="fa fa-home"></i></a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'">Video Clips</a></li>';
         if(isset($_GET['id'])){
             $this->db->where('id',intval($_GET['id']));
             $item=$this->db->getOne('video','id,title');
@@ -68,7 +68,7 @@ class video{
         return $str;  
     }
     function one_ind_video($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str='
         <div class="ind-project">
             <a href="'.$lnk.'">

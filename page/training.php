@@ -33,7 +33,7 @@ class training{
                 <div class="row ind-training">';
         foreach($list as $item){
             $img=$item['img']===''?'holder.js/600x600':webPath.$item['img'];
-            $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
+            $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
             $str.='
             <div class="col-xs-6 col-md-3">
             <a href="'.$lnk.'">
@@ -52,14 +52,14 @@ class training{
         $this->db->reset();
         $str.='
         <ul class="breadcrumb clearfix">
-        	<li><a href="'.myWeb.'"><i class="fa fa-home"></i></a></li>
-            <li><a href="'.myWeb.$this->view.'">Đào Tạo</a></li>';
+        	<li><a href="'.myWeb.$this->lang.'/"><i class="fa fa-home"></i></a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'">Đào Tạo</a></li>';
         if(isset($_GET['id'])){
             $this->db->where('id',intval($_GET['id']));
             $item=$this->db->getOne('training','id,title,pId');
             $cate=$this->db->where('id',$item['pId'])->getOne('training_cate','id,title');
             $str.='
-            <li><a href="'.myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
+            <li><a href="'.myWeb.$this->lang.'/'.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'].'">'.$cate['title'].'</a></li>
             <li><a href="#">'.$item['title'].'</a></li>';
         }elseif(isset($_GET['pId'])){
             $cate=$this->db->where('id',intval($_GET['pId']))->getOne('training_cate','id,title');
@@ -79,7 +79,7 @@ class training{
         foreach($list as $item){
             if($item['id']==$pId) $cls=' class="active"';
             else $cls='';
-            $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
+            $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
             $str.='
             <a href="'.$lnk.'"'.$cls.'>
                 '.$item['title'].'
@@ -176,7 +176,7 @@ class training{
     }
     function training_list_item($item){
         $img=$item['img']===''?'holder.js/600x600':webPath.$item['img'];
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str='
         <div class="row training-item">
         <a href="'.$lnk.'">

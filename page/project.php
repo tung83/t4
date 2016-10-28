@@ -42,7 +42,7 @@ class project{
         <ul class="category">';
         foreach($list as $item){
             if($item['id']==$pId) $cls=' class="active"';else $cls='';
-            $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
+            $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'];
             $str.='
             <li><a'.$cls.' href="'.$lnk.'"><i class="fa fa-angle-double-right"></i> '.$item['title'].'</a></li>';
         }
@@ -195,7 +195,7 @@ class project{
     }
     
     function one_ind_project($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str='
         <div class="ind-project">
             <a href="'.$lnk.'">

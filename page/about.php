@@ -75,13 +75,13 @@ class about{
         }
         
         $pg=new Pagination(array('limit'=>limit,'count'=>$count,'page'=>$page,'type'=>0));
-        $pg->set_url(array('def'=>myWeb.$this->view,'url'=>myWeb.'[p]/'.$this->view));
+        $pg->set_url(array('def'=>myWeb.$this->lang.'/'.$this->view,'url'=>myWeb.$this->lang.'/'.'[p]/'.$this->view));
 
         $str.= '<div class="pagination-centered">'.$pg->process().'</div>';
         return $str;
     }
     function about_item($item){
-        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str.='
         <a href="'.$lnk.'" class="about-item clearfix">
             <img src="'.webPath.$item['img'].'" class="img-responsive" alt="" title=""/>
