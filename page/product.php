@@ -198,7 +198,7 @@ class product{
         return $str;
     }
     function product_item($item){
-        $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
+        $lnk=myWeb.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $img=$this->first_image($item['id']);
         $str.='
         <div class="col-md-3 col-item5 wow fadeInLeft product-item text-center" data-wow-duration="2s">
@@ -347,7 +347,7 @@ class product{
             <div id="tabs" class="tabs">
                 <ul>
                     <li><a href="#tabs-1">MÔ TẢ CHI TIẾT</a></li>
-                    <li><a href="#tabs-2">THÔNG SỐ KỸ THUẬT</a></li>
+                    <li><a href="#tabs-2">Bình Luận</a></li>
                     <!--li><a href="#tabs-3">GHI CHÚ</a></li>
                     <li><a href="#tabs-4">BÌNH LUẬN</a></li-->
                 </ul>
@@ -380,18 +380,18 @@ class product{
             </div>';
            $i=1;
             foreach($list as $item){
-                if($i%3==1){
+                if($i%5==1){
                     $str.='
                     <div class="row">';
                 }
                 $str.=$this->product_item($item);
-                if($i%3==0){
+                if($i%5==0){
                     $str.='
                     </div>';
                 }
                 $i++;
             }  
-            if($i%3!=1){
+            if($i%5!=1){
                $str.='
                </div>'; 
             }     

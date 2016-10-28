@@ -122,19 +122,7 @@ class contact{
                 </div><!--/.row-->
             </div><!--/.container-->
         </section><!--/#contact-page-->
-        <section id="contact-page">
-            <div class="gmap-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="gmap">
-                                '.$basic_config['gmap_script'].'
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>  <!--/gmap_area -->';
+        ';
         return $str;
     }
     function send_mail($item){

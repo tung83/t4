@@ -18,7 +18,7 @@ define('product_title'  ,'Sản phẩm');
 define('detail_price'   ,'Giá');
 define('feature'        ,'Đặc điểm nổi bật');
 define('content'        ,'MÔ TẢ');
-define('detail'         ,'THÔNG SỐ KỸ THUẬT');
+define('detail'         ,'Bình Luận');
 define('teach'          ,'HƯỚNG DẪN SỬ DỤNG');
 define('contact'        ,'Liên Hệ');
 define('contact_desc'   ,'Cảm ơn Quý Khách ghé thăm website của chúng tôi.<br/>Mọi thông tin chi tiết xin vui lòng liên hệ:');

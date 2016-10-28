@@ -221,7 +221,7 @@ function about($db,$lang){
 }
 function news($db,$lang){
     $str.='
-    <section id="page">';
+    <section id="news-page">';
     common::page('news');
     $news=new news($db,$lang);
     $str.=$news->breadcrumb();
