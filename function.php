@@ -210,7 +210,7 @@ function project($db,$lang){
 }
 function about($db,$lang){
     $str.='
-    <section id="page">';
+    <section id="about-page">';
     common::page('about');
     $about=new about($db,$lang);
     $str.=$about->breadcrumb();
@@ -254,22 +254,20 @@ function product($db,$lang){
     $pd=new product($db,$lang);
     $str.=$pd->breadcrumb();
     $str.='
-    <div class="container">
-    <div class="row">
-        <div class="col-xs-3">
-        '.$pd->category().'
-        </div>
-        <div class="col-xs-9">';
+    <div id="category-bar" class="container-fluid">
+        <div class="row text-center">'
+            .$pd->category()
+        .'</div">
+    </div>';
+    $str.='
+    <div class="container">';
     if(isset($_GET['id'])){
         $id=intval($_GET['id']);
         $str.=$pd->product_one($id);
     }else{
         $str.=$pd->product_cate();
     }
-    $str.='
-        </div>
-    </div>
-    </div>';
+    $str.='</div>';
     $str.='
     </section>';
     return $str;

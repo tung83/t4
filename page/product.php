@@ -201,7 +201,7 @@ class product{
         $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $img=$this->first_image($item['id']);
         $str.='
-        <div class="col-xs-4 wow fadeInLeft product-item text-center" data-wow-duration="2s">
+        <div class="col-md-3 col-item5 wow fadeInLeft product-item text-center" data-wow-duration="2s">
         <a href="'.$lnk.'">
 			<figure>
 				<img src="'.webPath.'thumb_'.$img.'" alt="'.$item['title'].'" title="'.$item['title'].'" class="img-responsive center-block">
@@ -252,22 +252,21 @@ class product{
         $pId=$this->check_pId();
         $list=$this->db->where('active',1)->orderBy('ind','ASC')->get('product_cate',null,'id,title');
         $str='
-        <div class="row product-category">
-        <div class="col-xs-12">';
+        <div class="row product-category">';
+        $index = 0;
         foreach($list as $item){
-            if($item['id']==$pId){
+            $index++;
+            if((!$pId && $index == 1) || $item['id']==$pId){
                 $active=' class="active"';
             }else{
                 $active='';
             }
             $str.='
-            <a href="'.myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'].'"'.$active.'>
+            <a href="'.myWeb.$this->view.'/'.common::slug($item['title']).'-p'.$item['id'].'"'.$active.'>
                 '.$item['title'].'
             </a>';
         }
-        $str.='
-        </div>
-        </div>';
+        $str.='</div> </div>';
         return $str;
     }
     function product_cate(){
@@ -284,18 +283,18 @@ class product{
         $count=$this->db->totalCount;
         $i=1;
         foreach($list as $item){
-            if($i%3==1){
+            if($i%5==1){
                 $str.='
                 <div class="row">';
             }
             $str.=$this->product_item($item);
-            if($i%3==0){
+            if($i%5==0){
                 $str.='
                 </div>';
             }
             $i++;
         }  
-        if($i%3!=1){
+        if($i%5!=1){
            $str.='
            </div>'; 
         }  

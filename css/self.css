@@ -241,6 +241,25 @@ section#ind-news{
 #ind-product .pagination-css{
     color: #2aa498;
 }
+
+.product-category{
+    background: #E3F3F1;
+    height: 40px;
+    padding-top: 5px;
+    line-height: 30px;
+    
+}
+.product-category a{
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: #000;
+}
+.product-category a.active, .product-category a:hover, .product-category a:focus{
+    color: #3bc9bc;    
+}
+#category-bar{
+    margin-bottom: 70px;
+}
 /*My Define*/
 @media(max-width:991px){
     .logo{
@@ -276,8 +295,14 @@ section#ind-news{
         height: 400px;
     }
     
-    #ind-product .col-item5{
+    .col-item5{
         width: 20% !important;
+    }
+    .breadcrumb{
+        display: none;
+    }
+    #about-page {
+        margin-top: 50px;
     }
 
 }
