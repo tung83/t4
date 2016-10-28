@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="fb-page" 
-                      data-href="https://www.facebook.com/facebook"
+                      data-href="https://www.facebook.com/t4vietnam/?fref=ts"
                       data-width="380" 
                       data-hide-cover="false"
                       data-show-facepile="true" 
