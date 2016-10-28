@@ -99,6 +99,8 @@ class product{
     }
     function ind_product(){ 
         $str.='
+            
+        <a name="product-list"> </a>
         <section id="ind-product">
             <div class="container-fluid">
             <h2 class="awesome-title">
@@ -106,10 +108,15 @@ class product{
                     '.$this->title.'
                 </span>
             </h2>';
-        $list=$this->db->where('active',1)->where('price_reduce',0)->where('home',1)->orderBy('id')->orderBy('id')->get('product');
+        $list=$this->db->where('active',1)->where('price_reduce',0)->where('home',1)->orderBy('id')->orderBy('id');        
+        $this->db->where('active',1)->orderBy('id');
+        $this->db->pageLimit=5;
+        $page=isset($_GET['page'])?intval($_GET['page']):1;
+        $list=$this->db->paginate('product',$page);
+        $count=$this->db->totalCount;
         $i=1;   
         foreach($list as $item){
-            if($i%4==1){
+            if($i%5==1){
                 $str.='
                 <div class="row">';
             }
@@ -117,7 +124,7 @@ class product{
             $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
             $img='thumb_'.$this->first_image($item['id']);
             $str.='
-            <div class="col-md-3 product-item">
+            <div class="col-md-3 col-item5 product-item">
                 <a href="'.$lnk.'">
                     <img src="'.webPath.$img.'" class="img-responsive center-block"/>
                     <h2 class="text-center">'.$title.'</2h>
@@ -125,20 +132,47 @@ class product{
                     <a href="#" class="btn btn-default btn-product"><i class="fa fa-shopping-cart"></i> '.cart.'</a>
                 </a>
             </div>';
-            if($i%4==0){
+            if($i%5==0){
                 $str.='
                 </div>';
             }
             $i++;
         }
-        if($i%4!=1){
+        if($i%5!=1){
             $str.='
             </div>';
         }
+        
+        $pg = new Pagination();    
+        $pg->pagenumber = $page;
+        $pg->pagesize = 5;
+        $pg->totalrecords = $count;
+        $pg->showfirst = true;
+        $pg->showlast = true;
+        $pg->paginationcss = "pagination-large";
+        $pg->paginationstyle = 1; // 1: advance, 0: normal
+        if(!$pId || $pId==0){
+            $pg->defaultUrl = myWeb;
+            $pg->paginationUrl = myWeb."[p]#product-list";            
+        }else{
+            $cate=$this->db->where('id',$pId)->getOne('product_cate','id, title');
+            
+            $pg->defaultUrl = myWeb.$this->view.'/'.common::slug($cate['title']).'-p'.$cate['id'];
+            $pg->paginationUrl = $pg->defaultUrl ."/[p]#product-list";
+        }     
+        $str.= '<div class="row">
+                    <div class= "col-md-12 text-center">
+                      <div class="pagination pagination-centered">'
+                        .$pg->process()
+                    .'</div>
+                    </div>
+                </div>'; 
         $str.=' 
             </div><!--/.container-->
         </section><!--/#partner-->';
-        return $str;
+        return $str;        
+        
+        
     }
     function hot_product(){
         $this->db->reset();
