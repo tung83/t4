@@ -4,7 +4,10 @@ body{
     font-size:13px;
     line-height:19px;
 }
-
+.container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+}
 a:hover{
     text-decoration:none
 }
@@ -226,6 +229,18 @@ section#ind-news{
     display:block;
     margin-bottom:10px
 }
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    background-color: #2aa498;
+    border-color: #2aa498;
+    color: #fff !important;
+}
+#ind-product .pagination{
+    margin-bottom: 0;
+}
+#ind-product .pagination-css{
+    color: #2aa498;
+}
 /*My Define*/
 @media(max-width:991px){
     .logo{
@@ -263,17 +278,6 @@ section#ind-news{
     
     #ind-product .col-item5{
         width: 20% !important;
-    }
-    .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
-        background-color: #2aa498;
-        border-color: #2aa498;
-        color: #fff !important;
-    }
-    #ind-product .pagination{
-        margin-bottom: 0;
-    }
-    #ind-product .pagination-css{
-        color: #2aa498;
     }
 
 }
