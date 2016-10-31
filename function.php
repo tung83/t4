@@ -30,7 +30,7 @@ function menu($db,$lang,$view){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="'.myWeb.$lang.'">
                 <img src="'.selfPath.'logo.png" class="img-responsive logo"/>
               </a>
             </div>
@@ -180,7 +180,7 @@ function contact($db,$lang){
 }
 function career($db,$lang){
     $str.='
-    <section id="page">';
+    <section id="carrer-page">';
     common::page('career');
     $career=new career($db,$lang);
     $str.=$career->breadcrumb();

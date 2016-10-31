@@ -56,9 +56,10 @@ class product{
                 <div class="row">';
             }
             $title=$this->lang=='en'?$item['e_title']:$item['title'];
+            $product_view=$this->lang=='en'?'product':'san-pham';
             $feature=$this->lang=='en'?$item['e_feature']:$item['feature'];
             $percent=100-round(($item['price_reduce']*100)/($item['price']==0?1:$item['price']),0);
-            $lnk='#';
+            $lnk=myWeb.$this->lang.'/'.$product_view.'/'.common::slug($item['title']).'-i'.$item['id'];
             $str.='                
             <div class="col-md-6 col-middle2-container product-sale-item">
                 <div class="row col-middle2">
@@ -253,10 +254,8 @@ class product{
         $list=$this->db->where('active',1)->orderBy('ind','ASC')->get('product_cate',null,'id,title');
         $str='
         <div class="row product-category">';
-        $index = 0;
         foreach($list as $item){
-            $index++;
-            if((!$pId && $index == 1) || $item['id']==$pId){
+            if($item['id']==$pId){
                 $active=' class="active"';
             }else{
                 $active='';
@@ -341,35 +340,34 @@ class product{
                 </form-->
                 <p>'.$item['feature'].'</p>
                 </article>
+                
+                <div id="tabs" class="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">MÔ TẢ CHI TIẾT</a></li>
+                        <li><a href="#tabs-2">BÌNH LUẬN</a></li>
+                        <!--li><a href="#tabs-3">GHI CHÚ</a></li>
+                        <li><a href="#tabs-4">BÌNH LUẬN</a></li-->
+                    </ul>
+                    <div id="tabs-1">
+                        <article>
+                            <p>'.$item['content'].'</p>
+                        </article>
+                    </div>
+                    <div id="tabs-2">
+                        <article>
+                            <p>'.$item['detail'].'</p>
+                        </article>
+                    </div>
+                    <!--div id="tabs-3">
+                        <article>
+                            <p>'.$item['manual'].'</p>
+                        </article>
+                    </div>
+                    <div id="tabs-4">
+                        <div class="fb-comments" data-width="100%" data-href="'.$lnk.'" data-numposts="5"></div>
+                    </div-->
+                </div>   
             </div>
-        </div>                   
-        <div>
-            <div id="tabs" class="tabs">
-                <ul>
-                    <li><a href="#tabs-1">MÔ TẢ CHI TIẾT</a></li>
-                    <li><a href="#tabs-2">BÌNH LUẬN</a></li>
-                    <!--li><a href="#tabs-3">GHI CHÚ</a></li>
-                    <li><a href="#tabs-4">BÌNH LUẬN</a></li-->
-                </ul>
-                <div id="tabs-1">
-                    <article>
-                        <p>'.$item['content'].'</p>
-                    </article>
-                </div>
-                <div id="tabs-2">
-                    <article>
-                        <p>'.$item['detail'].'</p>
-                    </article>
-                </div>
-                <!--div id="tabs-3">
-                    <article>
-                        <p>'.$item['manual'].'</p>
-                    </article>
-                </div>
-                <div id="tabs-4">
-                    <div class="fb-comments" data-width="100%" data-href="'.$lnk.'" data-numposts="5"></div>
-                </div-->
-            </div>       
         </div>';
         if(count($list)>0){
             $str.='
