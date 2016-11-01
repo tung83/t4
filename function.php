@@ -249,7 +249,7 @@ function manual($db){
 }
 function product($db,$lang){
     $str.='
-    <section id="page">';  
+    <section id="product-page">';  
     common::page('product');
     $pd=new product($db,$lang);
     $str.=$pd->breadcrumb();

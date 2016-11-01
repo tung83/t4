@@ -328,10 +328,10 @@ class product{
         $lnk=domain.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $str.='
         <div class="row product-detail clearfix">
-            <div class="col-md-5">
+            <div class="col-md-3">
                 '.$this->product_image_show($item['id']).'
             </div>
-            <div class="col-md-7">
+            <div class="col-md-9">
                 <article class="product-one">
                 <h1>'.$item['title'].'</h1>
                 <!--b>Giá Bán Lẻ: <em>'.number_format($item['price'],0,',','.').'VNĐ</em></b-->
