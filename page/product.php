@@ -67,8 +67,8 @@ class product{
                         <a href="'.$lnk.'">
                             <h2>'.$title.'</2h>
                             <p>'.common::str_cut($feature,200).'</p>
-                            <p><s>'.number_format($item['price'],0,',','.').'</s><sup>VNĐ</sup></p>
-                            <p><b>'.number_format($item['price_reduce'],0,',','.').'</b><sup>VNĐ</sup></p>
+                            <p><s>'.number_format($item['price'],0,',','.').'</s>&nbsp;₫</p>
+                            <p><b>'.number_format($item['price_reduce'],0,',','.').'</b>&nbsp;₫</p>
                         </a>
                         <button class="btn btn-default btn-ind-about" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
                 
@@ -134,7 +134,7 @@ class product{
                     <h2>'.$title.'</h2>                
                 </a>
                 <a href="'.$lnk.'">    
-                    <p><b>'.number_format($item['price'],0,',','.').'</b><sup>VNĐ</sup></p>
+                    <p><b>'.number_format($item['price'],0,',','.').'</b>&nbsp;₫</p>
                 </a>    
                 <button class="btn btn-default btn-product" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
                 
@@ -214,10 +214,13 @@ class product{
 				<img src="'.webPath.'thumb_'.$img.'" alt="'.$item['title'].'" title="'.$item['title'].'" class="img-responsive center-block">
 				<figcaption class="text-center">
 					<h3>'.common::str_cut($item['title'],30).'</h3>
-					<!--span><b>Giá bán:</b> <em>'.number_format($item['price'],0,'.','.').'VNĐ</em></span-->
+					<!--span><b>Giá bán:</b> <em>'.number_format($item['price'],0,'.','.').'&nbsp;₫</em></span-->
 				</figcaption>
 			</figure>
         </a>
+        <a href="'.$lnk.'">    
+                    <p><b>'.number_format($item['price'],0,',','.').'</b>&nbsp;₫</p>
+        </a>  
           <button class="btn btn-default btn-product" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
               
 		</div>';
@@ -237,7 +240,7 @@ class product{
         $str.='
         <a href="'.$lnk.'">
             <div>
-                <p>'.($item['price']==0?contact:number_format($item['price'],0,',','.').' VNĐ').'</p>
+                <p>'.($item['price']==0?contact:number_format($item['price'],0,',','.').'&nbsp;₫').'</p>
                 <img src="'.$img.'" class="img-responsive" />
                 <p>
                     <h2>'.$item['title'].'</h2>
