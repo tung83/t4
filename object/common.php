@@ -224,10 +224,6 @@ class common{
     static function cart_link($lang){
         return myWeb.$lang.'/'. ($lang == 'en' ? 'cart' : 'gio-hang');
     }
-    static function cart_qual(){
-        $cart=$_SESSION['cart'];
-        return myWeb.$lang.'/'. ($lang == 'en' ? 'cart' : 'gio-hang');
-    }
     function ads_banner($db){
         $db->reset();
         $db->where('active',1)->orderBy('ind','ASC')->orderBy('id');

@@ -70,7 +70,8 @@ class product{
                             <p><s>'.number_format($item['price'],0,',','.').'</s><sup>VNĐ</sup></p>
                             <p><b>'.number_format($item['price_reduce'],0,',','.').'</b><sup>VNĐ</sup></p>
                         </a>
-                        <a href="#" class="btn btn-default btn-ind-about"><i class="fa fa-shopping-cart"></i> '.cart.'</a>
+                        <button class="btn btn-default btn-ind-about" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
+                
                     </div>
                     <div class="col-xs-4">
                         <a href="'.$lnk.'">
@@ -217,6 +218,8 @@ class product{
 				</figcaption>
 			</figure>
         </a>
+          <button class="btn btn-default btn-product" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
+              
 		</div>';
         return $str;
     }
@@ -340,7 +343,7 @@ class product{
                 <article class="product-one">
                 <h1>'.$item['title'].'</h1>
                 <b>Giá: <span id="span-price">'.number_format($item['price'],0,',','.').'&nbsp;₫</span></b>
-                <form class="form-horizontal" action="javascript:add_cart('.$item['id'].',1)">
+                <form class="form-horizontal" action="javascript:add_cart('.$item['id'].',$(\'#amount\').val())">
                      <div class="control-group">
                         <div class="controls form-inline">
                             <label for="product-select-option-0">Size</label>
@@ -352,11 +355,11 @@ class product{
                             <div class="number-spinner-container">
                                 <div class="input-group number-spinner ">
                                         <span class="input-group-btn">
-                                                <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                                <button type="button" class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                                         </span>
-                                        <input type="text" class="form-control text-center" value="1">
+                                        <input type="text" id="amount" class="form-control text-center" value="1">
                                         <span class="input-group-btn">
-                                                <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                                <button type="button" class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                                         </span>
                                 </div>
                             </div>

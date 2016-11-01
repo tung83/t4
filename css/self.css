@@ -301,8 +301,8 @@ section#ind-news{
     font-weight: 700;
     padding: 2px;
     position: absolute;
-    top: -6px;
-    right: 21px;
+    top: 4px;
+    right: 0;
     z-index: 2;
     line-height: 11px;
     height: 14px;

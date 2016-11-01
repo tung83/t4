@@ -384,4 +384,10 @@ function search($db,$lang){
     </section>';
     return $str;
 }
+
+function cart_count($db){
+    common::load('cart');
+    $obj=new cart($db);
+    return $obj->cart_count();
+}
 ?>
