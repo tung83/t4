@@ -194,7 +194,7 @@ section#ind-news{
 }
 
 .float-icon{
-    position:absolute;
+    position:fixed;
     right:5px;
     top:30%;
     z-index:200;
@@ -278,8 +278,9 @@ section#ind-news{
     font-weight: 700;
 }
 .number-spinner{
-    width: 150px;
+    width: 130px;
     float: left;
+    margin-right: 20px;
 }
 .number-spinner-container{
     display: inline-block;
@@ -293,6 +294,24 @@ section#ind-news{
 }
 .product-detail form{
     margin: 15px 0;
+}
+.user-cart-quantity{
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    padding: 2px;
+    position: absolute;
+    top: -6px;
+    right: 21px;
+    z-index: 2;
+    line-height: 11px;
+    height: 14px;
+    font-size: 11px;
+    min-width: 14px;
+    background: #ff6c25;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 .mfp-content img{
     background-color: #fff;

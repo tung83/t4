@@ -230,6 +230,30 @@ function news($db,$lang){
     </section>';
     return $str;
 }
+
+function cart($db, $view)
+{
+    common::load('product','page');
+    $pd=new product($db);
+    common::load('cart_show','page');
+    $cart = new cart_show($db);
+    
+    $str.='
+    <div class="container all-i-know">
+        <div class="row">';
+        switch($act=$_GET['act']){
+            case 'thanh-toan':
+                $str.=$cart->cart_checkout();
+                break;
+            default:
+                $str.=$cart->cart_output();
+                break;
+    }
+    $str.='           
+        </div>
+    </div>';
+    return $str;
+}
 function manual($db){
     //common::widget('layer_slider');
     //$layer_slider=new layer_slider($db);

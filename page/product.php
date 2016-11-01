@@ -125,13 +125,18 @@ class product{
             $lnk=myWeb.$this->lang.'/'.$this->view.'/'.common::slug($item['title']).'-i'.$item['id'];
             $img='thumb_'.$this->first_image($item['id']);
             $str.='
-            <div class="col-md-3 col-item5 product-item">
+            <div class="col-md-3 col-item5 product-item text-center">
                 <a href="'.$lnk.'">
                     <img src="'.webPath.$img.'" class="img-responsive center-block"/>
-                    <h2 class="text-center">'.$title.'</2h>
-                    <p><b>'.number_format($item['price'],0,',','.').'</b><sup>VNĐ</sup></p>
-                    <a href="#" class="btn btn-default btn-product"><i class="fa fa-shopping-cart"></i> '.cart.'</a>
+                </a>                
+                <a href="'.$lnk.'">
+                    <h2>'.$title.'</h2>                
                 </a>
+                <a href="'.$lnk.'">    
+                    <p><b>'.number_format($item['price'],0,',','.').'</b><sup>VNĐ</sup></p>
+                </a>    
+                <button class="btn btn-default btn-product" onclick="add_cart('.$item['id'].',1)"><i class="fa fa-shopping-cart"></i> '.cart.'</button>
+                
             </div>';
             if($i%5==0){
                 $str.='

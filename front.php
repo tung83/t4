@@ -34,7 +34,8 @@ $js=array(
     'jquery.flexslider',
     'modernizr.custom.new',
     'toucheffects',
-    'self'
+    'self',
+    'functions'
 );
 include_once 'config.php';
 include_once 'lang/'.$lang.'.php';

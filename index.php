@@ -42,6 +42,10 @@
         case 'tim-kiem':
             echo search($db,$lang);
             break;
+        case 'gio-hang':
+        case 'cart':
+            echo cart($db,$view);
+            break;
         default:
             echo home($db,$lang);
             break;
@@ -91,7 +95,7 @@
         </section>
     </footer>
     <div class="float-icon">
-        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        <a href="<?=common::cart_link($lang)?>"><i class="fa fa-shopping-cart"></i><span class="user-cart-quantity">3</span></a>
         <a href="#"><i class="fa fa-search"></i></a>
         <a href="tel:<?=common::remove_format_text(common::qtext($db,$lang,2))?>"><i class="fa fa-phone"></i></a>
     </div>

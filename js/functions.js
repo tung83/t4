@@ -106,3 +106,4 @@ function add_cart(id,qty){
     });
 }
 
+
