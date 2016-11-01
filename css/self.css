@@ -119,11 +119,14 @@ footer .footer{
     color:#fff;
     margin-top:10px
 }
-.btn-product{
+.btn-product,.btn-product:hover, .btn-product:focus, .btn-product:active{
     background:#2aa498;
     border-radius:0px;
     color:#fff !important;
     margin-top:10px
+}
+.btn-product:hover, .btn-product:focus, .btn-product:active{
+    opacity: .8;
 }
 .product-sale .col-md-6:nth-child(n+1){
     background:#597267
