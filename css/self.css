@@ -272,6 +272,28 @@ section#ind-news{
 #product-page .title{
     border-bottom: 2px solid #E3F3F1;    
 }
+#span-price{
+    color: #3bc9bc;
+    font-size: 18px;
+    font-weight: 700;
+}
+.number-spinner{
+    width: 150px;
+    float: left;
+}
+.number-spinner-container{
+    display: inline-block;
+    vertical-align: middle;
+}
+.product-detail .btn-product{
+    margin-top: 0;
+}
+.product-detail .form-inline{
+    line-height: 35px;
+}
+.product-detail form{
+    margin: 15px 0;
+}
 .mfp-content img{
     background-color: #fff;
     padding-left: 20px;

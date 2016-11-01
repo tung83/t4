@@ -334,11 +334,31 @@ class product{
             <div class="col-md-9">
                 <article class="product-one">
                 <h1>'.$item['title'].'</h1>
-                <!--b>Giá Bán Lẻ: <em>'.number_format($item['price'],0,',','.').'VNĐ</em></b-->
-                <!--form action="javascript:add_cart('.$item['id'].',1)">
-                    <button class="btn btn-default"><i class="fa fa-shopping-cart"></i> Mua Hàng</button>
-                </form-->
-                <p>'.$item['feature'].'</p>
+                <b>Giá: <span id="span-price">'.number_format($item['price'],0,',','.').'&nbsp;₫</span></b>
+                <form class="form-horizontal" action="javascript:add_cart('.$item['id'].',1)">
+                     <div class="control-group">
+                        <div class="controls form-inline">
+                            <label for="product-select-option-0">Size</label>
+                            <select id="size-product" name="size" class="form-control"><option value="M">M</option><option value="L">L</option></select>
+                            <div class="selector-wrapper clearfix">
+                            </div>
+                            
+                            <label for="">Số lượng</label>
+                            <div class="number-spinner-container">
+                                <div class="input-group number-spinner ">
+                                        <span class="input-group-btn">
+                                                <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                        </span>
+                                        <input type="text" class="form-control text-center" value="1">
+                                        <span class="input-group-btn">
+                                                <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                        </span>
+                                </div>
+                            </div>
+                            <button class="btn btn-default btn-product"><i class="fa fa-shopping-cart"></i> Mua Hàng</button>
+                            
+                    
+                </form>
                 </article>
                 
                 <div id="tabs" class="tabs">
@@ -368,7 +388,30 @@ class product{
                     </div-->
                 </div>   
             </div>
-        </div>';
+        </div> 
+        
+        <script>
+            $(document).on("click", ".number-spinner button", function () {    
+            var btn = $(this),
+                    oldValue = btn.closest(".number-spinner").find("input").val().trim(),
+                    newVal = 0;
+
+            if (btn.attr("data-dir") == "up") {
+                    newVal = parseInt(oldValue) + 1;
+            } else {
+                    if (oldValue > 1) {
+                            newVal = parseInt(oldValue) - 1;
+                    } else {
+                            newVal = 1;
+                    }
+            }
+            btn.closest(".number-spinner").find("input").val(newVal);           
+
+        });
+            $("#size-product").change(function() {
+                alert("tung" +$(this).val());
+              });
+        </script>';
         if(count($list)>0){
             $str.='
             <div class="wow fadeInDown row">
