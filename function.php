@@ -401,15 +401,21 @@ function social($db){
     return $str;
 }
 function search($db,$lang){
-    $hint=$_GET['hint'];
     $str.='
-    <section id="page">';
-    common::load('search','page');
-    $obj = new search($db,$hint,$lang);
-    $obj->add('product','Sản Phẩm','san-pham');
-    $obj->add('project','Dự Án','du-an');
-    $obj->add('career','Tuyển Dụng','tuyen-dung');
-    $str.=$obj->output();
+    <section id="product-page">';  
+    common::page('product');
+    $pd=new product($db,$lang);
+    $str.=$pd->breadcrumb();
+    $str.='
+    <div id="category-bar" class="container-fluid">
+        <div class="row text-center">'
+            .$pd->category()
+        .'</div">
+    </div>';
+    $str.='
+    <div class="container">';
+    $str.=$pd->product_search();
+    $str.='</div>';
     $str.='
     </section>';
     return $str;

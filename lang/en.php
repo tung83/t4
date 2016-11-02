@@ -31,4 +31,5 @@ define('other_article'  ,'Other Articles');
 define('cart'           ,'Add to cart');
 define('payment_view'           ,'payment');
 define('product_view'           ,'product');
+define('search_view'           ,'search');
 ?>

@@ -377,10 +377,10 @@ section#ind-news{
         float: right;
     }
     
-    .product-category{
-        width: 980px;
+    .product-category{        
+        width: 850px;
+        padding-left: 40px;
         margin: auto;
-
     }
     .product-sale .col-md-6:nth-child(n+2) .col-middle2{
         float:left !important;

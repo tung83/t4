@@ -111,6 +111,7 @@
           </div>
           <div class="modal-body">
              <form role="form" method="get" name="search" id="search">        
+                 <input type="hidden" id="search-link" value="<?=myWeb.$lang.'/'.search_view.'/'?>" />
                 <!-- Search Field -->
                 <div class="form-group">
                     <div class="input-group">

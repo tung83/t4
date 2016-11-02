@@ -317,6 +317,36 @@ class product{
         $str.=$pg->process();*/
         return $str; 
     }
+    
+    function product_search(){
+        $sql="select * from product where active=1 and title like '%".$_GET['hint']."%' order by id desc";
+        $list=$this->db->rawQuery($sql);
+        
+//        $this->db->reset();
+//        $this->db->where('active',1)->orderBy('id');
+//        $this->db->pageLimit=pd_lim;
+//        $page=isset($_GET['page'])?intval($_GET['page']):1;
+//        $list=$this->db->paginate('product',$page);       
+        $str='<h3>Có '.count($list).' kết quả với từ khoá <b style="color:#f00">"'.$_GET['hint'].'"</b></h3>';
+        $i=1;
+        foreach($list as $item){
+            if($i%5==1){
+                $str.='
+                <div class="row">';
+            }
+            $str.=$this->product_item($item);
+            if($i%5==0){
+                $str.='
+                </div>';
+            }
+            $i++;
+        }  
+        if($i%5!=1){
+           $str.='
+           </div>'; 
+        }  
+        return $str; 
+    }
     function product_list($pId,$type=1){
         $page=isset($_GET['page'])?intval($_GET['page']):1;
         $this->db->reset();
