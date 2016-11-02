@@ -184,11 +184,7 @@ function career($db,$lang){
     common::page('career');
     $career=new career($db,$lang);
     $str.=$career->breadcrumb();
-    if(isset($_GET['id'])){
-        $str.=$career->career_one();    
-    }else{
-        $str.=$career->career_all();
-    }    
+    $str.=$career->career_unique(); 
     $str.='
     </section>';
     return $str;

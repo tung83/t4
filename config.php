@@ -43,6 +43,8 @@ define('selfPath'   ,'/file/self/');
 define('phpLib'     ,root.'/object/');
 define('pageLib'    ,root.'/page/');
 define('widgetLib'  ,root.'/widget/');
+define('priceIncreaseL'  ,8000);
+
 
 
 //define area end

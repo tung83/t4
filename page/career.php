@@ -122,5 +122,19 @@ class career{
         </div>';
         return $str;
     }
+    
+    function career_unique(){
+        $item=$this->db->getOne('career');
+        $str='
+        <div class="container">
+            <div class="row article">
+                <article class="article">
+                    <h1 class="article">'.$item['title'].'</h1>
+                    <p>'.$item['content'].'</p>
+                </article>
+            </div>        
+        </div>';
+        return $str;
+    }
 }
 ?>

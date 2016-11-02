@@ -377,7 +377,8 @@ class product{
             <div class="col-md-9">
                 <article class="product-one">
                 <h1>'.$item['title'].'</h1>
-                <b>Giá: <span id="span-price">'.number_format($item['price'],0,',','.').'&nbsp;₫</span></b>
+                <b id="price-M">Giá: <span id="span-price">'.number_format($item['price'],0,',','.').'&nbsp;₫</span></b>
+                <b id="price-L">Giá: <span id="span-price">'.number_format($item['price']+priceIncreaseL,0,',','.').'&nbsp;₫</span></b>
                 <form class="form-horizontal" action="javascript:add_cart('.$item['id'].',$(\'#amount\').val())">
                      <div class="control-group">
                         <div class="controls form-inline">
@@ -451,8 +452,9 @@ class product{
             btn.closest(".number-spinner").find("input").val(newVal);           
 
         });
-            $("#size-product").change(function() {
-                alert("tung" +$(this).val());
+            $("#size-product").change(function() {                
+                $("#price-L").toggle();
+                $("#price-M").toggle();
               });
         </script>';
         if(count($list)>0){

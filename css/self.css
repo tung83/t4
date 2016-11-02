@@ -285,6 +285,9 @@ section#ind-news{
 #product-page{
     margin-bottom: 40px;
 }
+#price-L{
+    display: none;
+}
 #span-price{
     color: #3bc9bc;
     font-size: 18px;
