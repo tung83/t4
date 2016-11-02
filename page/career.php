@@ -128,7 +128,6 @@ class career{
         <div class="container">
             <div class="row article">
                 <article class="article">
-                    <h1 class="article">'.$item['title'].'</h1>
                     <p>'.$item['content'].'</p>
                 </article>
             </div>        
