@@ -1,16 +1,6 @@
 // Contents of functions.js
 $(function() { 
-    if(typeof $.fn.layerSlider == "undefined") { lsShowNotice("layerslider_1","jquery"); } 
-    else { 
-        $("#layerslider_1").layerSlider({
-            responsive:false, 
-            pauseOnHover: false, 
-            forceLoopNum: false, 
-            autoPlayVideos: false, 
-            skinsPath: "/file/self/",
-            skin: "fullwidthdark"
-        })
-    } 
+    
     $( "#tabs" ).tabs();
        
     $("#search").on('submit',function(e){
@@ -101,7 +91,7 @@ function add_cart(id,qty){
         url: "/page/cart.php",
         data: { act : 'add' , product_id : id , product_qty : qty }
     }).done(function( msg ) {
-        $("#cart-count").html(msg);
+        $("#cart-count").html(msg);        
         alert( "Đã thêm sản phẩm vào giỏ hàng!" );
     });
 }

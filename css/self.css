@@ -8,6 +8,11 @@ body{
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.ja_black {
+    background: #2aa498;
+    border: 3px solid #2aa498;
+}
 a:hover{
     text-decoration:none
 }
@@ -202,7 +207,7 @@ section#ind-news{
     top:30%;
     z-index:200;
 }
-.float-icon a{
+.float-icon a, .float-icon > span{
     padding:10px;
     font-size:30px;
     display:block;margin-bottom:10px;
@@ -211,7 +216,8 @@ section#ind-news{
     border-radius:50%;
     transition:all 0.5s ease
 }
-.float-icon a:hover{
+.float-icon a:hover,
+.float-icon > span:hover{
     opacity:0.7
 }
 .product-sale-item .col-xs-4{
@@ -325,6 +331,11 @@ section#ind-news{
     right: 10px;
     color: #333;
 }
+
+#searchModal .btn-product{
+    margin-top: 0;
+}
+
 /*My Define*/
 @media(max-width:991px){
     .logo{

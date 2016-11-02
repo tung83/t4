@@ -94,9 +94,40 @@
             </div>
         </section>
     </footer>
+
+    <!-- Modal -->
+    <div id="searchModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Search Product</h4>
+          </div>
+          <div class="modal-body">
+             <form role="form" method="get" name="search" id="search">        
+                <!-- Search Field -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" type="text" id="hint" name="hint" placeholder="Search" required/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-product" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"><span style="margin-left:10px;">Search</span></button>
+                        </span>
+                        </span>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <div class="float-icon">
         <a href="<?=common::cart_link($lang)?>"><i class="fa fa-shopping-cart"></i><span id="cart-count" class="user-cart-quantity"><?=cart_count($db)?></span></a>
-        <a href="#"><i class="fa fa-search"></i></a>
+        <span data-toggle="modal" data-target="#searchModal"><i class="fa fa-search"></i>        
+        </span>
+        
         <a href="tel:<?=common::remove_format_text(common::qtext($db,$lang,2))?>"><i class="fa fa-phone"></i></a>
     </div>
 <div id="fb-root"></div>
