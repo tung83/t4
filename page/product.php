@@ -211,7 +211,9 @@ class product{
         <div class="col-md-3 col-item5 wow fadeInLeft product-item text-center" data-wow-duration="2s">
         <a href="'.$lnk.'">
 			<figure>
-				<img src="'.webPath.'thumb_'.$img.'" alt="'.$item['title'].'" title="'.$item['title'].'" class="img-responsive center-block">
+                            <div class="image-container">
+                                <img src="'.webPath.'thumb_'.$img.'" alt="'.$item['title'].'" title="'.$item['title'].'" class="img-responsive center-block">
+                            </div>    
 				<figcaption class="text-center">
 					<h3>'.common::str_cut($item['title'],30).'</h3>
 					<!--span><b>Giá bán:</b> <em>'.number_format($item['price'],0,'.','.').'&nbsp;₫</em></span-->

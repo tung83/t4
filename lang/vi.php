@@ -32,4 +32,6 @@ define('serv'           ,'Dịch vụ');
 define('news'           ,'Tin tức');
 define('other_article'  ,'Bài viết khác');
 define('cart'           ,'Mua hàng');
+define('payment_view'           ,'thanh-toan');
+define('product_view'           ,'san-pham');
 ?>

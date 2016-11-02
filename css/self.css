@@ -175,8 +175,9 @@ h2.awesome-title span{
 .product-item a{
     color:#3e3e3e
 }
-.product-item h2{
-    font-size:14px;
+.product-item h2,.product-item h3{
+    font-size:17px;    
+    font-weight: bold;
 }
 .product-item a p{
     margin-top:10px;
@@ -254,8 +255,7 @@ section#ind-news{
 }
 
 .product-category{
-    background: #E3F3F1;
-    height: 40px;
+    height: auto;
     padding-top: 5px;
     line-height: 30px;
     
@@ -270,6 +270,7 @@ section#ind-news{
 }
 #category-bar{
     margin-bottom: 70px;
+    background: #E3F3F1;
 }
 .product-detail .col-md-3{
     margin-top: 30px;
@@ -280,6 +281,9 @@ section#ind-news{
 }
 #product-page .title{
     border-bottom: 2px solid #E3F3F1;    
+}
+#product-page{
+    margin-bottom: 40px;
 }
 #span-price{
     color: #3bc9bc;
@@ -336,6 +340,20 @@ section#ind-news{
     margin-top: 0;
 }
 
+#do_action{
+    float: right;
+}
+.thead-default{
+    background: #E3F3F1;
+}
+.cart-list{
+    margin-bottom: 40px;
+}
+.image-container {
+    position: relative;
+    height: 310px;
+}
+
 /*My Define*/
 @media(max-width:991px){
     .logo{
@@ -357,6 +375,12 @@ section#ind-news{
     .col-middle2{
         width: 590px;
         float: right;
+    }
+    
+    .product-category{
+        width: 980px;
+        margin: auto;
+
     }
     .product-sale .col-md-6:nth-child(n+2) .col-middle2{
         float:left !important;
@@ -388,6 +412,10 @@ section#ind-news{
     }
     #carrer-page{
         margin-top: 100px;           
+    }
+    
+    .cart-list{
+        margin-top: 120px;
     }
 
 }

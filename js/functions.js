@@ -8,7 +8,7 @@ $(function() {
         var val=$(this).find("#hint").val();
         var val=val.split(' ');
         var val=val.join('-');
-        $( location ).attr("href","/tim-kiem/"+val);
+        $( location ).attr("href","/search/"+val);
     });
 }); 
 $(function(){

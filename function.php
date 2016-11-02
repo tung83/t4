@@ -239,10 +239,11 @@ function cart($db, $view)
     $cart = new cart_show($db);
     
     $str.='
-    <div class="container all-i-know">
+    <div class="container cart-list">
         <div class="row">';
         switch($act=$_GET['act']){
             case 'thanh-toan':
+            case 'payment':
                 $str.=$cart->cart_checkout();
                 break;
             default:
@@ -250,6 +251,35 @@ function cart($db, $view)
                 break;
     }
     $str.='           
+        </div>
+    </div>';
+    return $str;
+}
+
+function payment($db, $view)
+{
+    common::load('product','page');
+    $pd=new product($db);
+    common::load('payment','page');
+    $obj = new payment($db);
+    
+    $str.='
+    <div class="container all-i-know">
+        <div class="row">'.$obj->breadcrumb().'</div>
+        <div class="row">
+            <div class="col-md-3">
+                '.$pd->category(0).'
+            </div>
+            <div class="col-md-9">';
+            
+    if (!isset($_GET['id'])) {
+        $str .= $obj->payment_all();
+    } else {
+        $str .= $obj->payment_one();
+    }
+            
+    $str.='
+            </div>
         </div>
     </div>';
     return $str;

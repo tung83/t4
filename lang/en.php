@@ -29,4 +29,6 @@ define('search'         ,'Search');
 define('all'            ,'See All');
 define('other_article'  ,'Other Articles');
 define('cart'           ,'Add to cart');
+define('payment_view'           ,'payment');
+define('product_view'           ,'product');
 ?>

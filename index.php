@@ -45,6 +45,10 @@
         case 'gio-hang':
         case 'cart':
             echo cart($db,$view);
+            break;        
+        case 'thanh-toan':
+        case 'payment':
+            echo payment($db,$view);
             break;
         default:
             echo home($db,$lang);

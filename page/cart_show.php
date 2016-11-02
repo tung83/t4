@@ -5,6 +5,7 @@ class cart_show{
         $this->db=$db;
         $this->cart=$_SESSION['cart'];
         $this->view=$view;
+        $this->lang=$lang;
     }
     function breadcrumb(){
         
@@ -81,15 +82,15 @@ class cart_show{
         $str.='
         <section id="cart_items">
 			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
-					<thead>
+				<table class="table table-condensed table-hover">					
+                                        <thead class="thead-default">
 						<tr class="cart_menu">
-							<td class="image">Hình Ảnh</td>
-							<td class="description">Tên SP</td>
-							<td class="price">Đơn Giá(VNĐ)</td>
-							<td class="quantity">SL</td>
-							<td class="total">Thành Tiền</td>
-							<td></td>
+							<th class="image">Hình Ảnh</th>
+							<th class="description">Tên SP</th>
+							<th class="price">Đơn Giá(VNĐ)</th>
+							<th class="quantity">SL</th>
+							<th class="total">Thành Tiền</th>
+							<th>Xóa</th>
 						</tr>
 					</thead>
 					<tbody>';
@@ -99,19 +100,20 @@ class cart_show{
         common::load('product','page');
         $pd=new product($this->db);
         $img=$pd->first_image($val['id']);
+        $lnk=myWeb.$this->lang.'/'.product_view.'/'.common::slug($item['title']).'-i'.$item['id'];
         $price=($item['price_reduce']>0&&$item['price_reduce']<$item['price'])?$item['price_reduce']:$item['price'];
         $total=$price*$val['qty'];
         $set+=$total;
         $str.='
         <tr>
 			<td class="cart_product">
-				<a href=""><img src="'.webPath.$img.'" class="img-responsive" style="max-width:50px" alt="" title=""/></a>
+				<a href="'.$lnk.'"><img src="'.webPath.$img.'" class="img-responsive" style="max-width:50px" alt="" title=""/></a>
 			</td>
 			<td class="cart_description">
-				<h4><a href="">'.$item['title'].'</a></h4>
+				<h4><a href="'.$lnk.'">'.$item['title'].'</a></h4>
 			</td>
 			<td class="cart_price">
-				<p>'.number_format($price,0,',','.').'</p>
+				<p>'.number_format($price,0,',','.').'&nbsp;₫</p>
 			</td>
 			<td class="cart_quantity">
 				<div class="cart_quantity_button">
@@ -121,10 +123,10 @@ class cart_show{
 				</div>
 			</td>
 			<td class="cart_price">
-				<p>'.number_format($total,0,',','.').'</p>
+				<p>'.number_format($total,0,',','.').'&nbsp;₫</p>
 			</td>
 			<td class="cart_delete">
-				<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+				<a class="cart_quantity_delete" href=""><i class="fa fa-trash-o"></i></a>
 			</td>
 		</tr>';
      }
@@ -134,20 +136,18 @@ class cart_show{
 			</div>    	
     	</section> <!--/#cart_items-->
     
-    	<section id="do_action">
-			<div class="heading" style="margin-bottom:5px">
-				<h3>Bạn muốn làm gì tiếp theo?</h3>
-			</div>
-			<div class="row">
+    	<section id="do_action">			
+			<div class="row ">
 				<div class="col-sm-12">
-					<div class="total_area">
-						<ul>
-							<li>Tổng tiền <span>'.number_format($set,0,',','.').' VNĐ</span></li>
-						</ul>
+                                <div class="total_area clearfix">
+					<p class="pull-right">                                        
+                                        <b>Tổng tiền: <span id="span-price">'.number_format($set,0,',','.').'&nbsp;₫</span></b>
+                                        </p>
+                                </div>
                         <div class="chose_area">						
-    						<a class="btn btn-default check_out" href="'.myWeb.'">Tiếp tục mua sắm</a>
-                            <a class="btn btn-default update" href="">Cập nhật</a>
-							<a class="btn btn-default check_out" href="'.myWeb.$this->view.'/thanh-toan">Gửi đơn hàng</a>
+    						<a class="btn btn-default btn-product" href="'.myWeb.'">Tiếp tục mua sắm</a>
+                            <a class="btn btn-default btn-product" href="">Cập nhật</a>
+							<a class="btn btn-default btn-product" href="'.myWeb.$this->lang.'/'.$this->view.'/'.payment_view.'">Gửi đơn hàng</a>
     					</div>							
 					</div>
 				</div>
