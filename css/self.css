@@ -353,6 +353,12 @@ section#ind-news{
     position: relative;
     height: 310px;
 }
+.cart-list .table .action-clear {
+   text-align: center;   
+}
+.cart-list .table td {
+     vertical-align: middle;
+}
 
 /*My Define*/
 @media(max-width:991px){

@@ -79,6 +79,8 @@ class cart_show{
         return $str;
     }
     function cart_output(){
+        
+        $str.='<form action="" method="post">';
         $str.='
         <section id="cart_items">
 			<div class="table-responsive cart_info">
@@ -90,7 +92,7 @@ class cart_show{
 							<th class="price">Đơn Giá(VNĐ)</th>
 							<th class="quantity">SL</th>
 							<th class="total">Thành Tiền</th>
-							<th>Xóa</th>
+							<th class="action-clear">Xóa</th>
 						</tr>
 					</thead>
 					<tbody>';
@@ -116,17 +118,24 @@ class cart_show{
 				<p>'.number_format($price,0,',','.').'&nbsp;₫</p>
 			</td>
 			<td class="cart_quantity">
-				<div class="cart_quantity_button">
-					<a class="cart_quantity_up" href=""> + </a>
-					<input class="cart_quantity_input" type="text" name="quantity" value="'.$val['qty'].'" autocomplete="off" size="2">
-					<a class="cart_quantity_down" href=""> - </a>
-				</div>
+                            <div class="number-spinner-container">
+                                <div class="input-group number-spinner ">
+                                        <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                        </span>
+                                        <input type="text" name="quantity_'.$val['id'].'" id="amount" class="form-control text-center" value="'.$val['qty'].'">
+                                        <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                        </span>
+                                </div>
+                            </div>
+				
 			</td>
 			<td class="cart_price">
 				<p>'.number_format($total,0,',','.').'&nbsp;₫</p>
 			</td>
-			<td class="cart_delete">
-				<a class="cart_quantity_delete" href=""><i class="fa fa-trash-o"></i></a>
+			<td class="action-clear">
+				<a href=""><i class="fa fa-trash-o"></i></a>
 			</td>
 		</tr>';
      }
@@ -146,13 +155,38 @@ class cart_show{
                                 </div>
                         <div class="chose_area">						
     						<a class="btn btn-default btn-product" href="'.myWeb.'">Tiếp tục mua sắm</a>
-                            <a class="btn btn-default btn-product" href="">Cập nhật</a>
+                            <button type="submit" class="btn btn-default btn-product">Cập nhật</button>
 							<a class="btn btn-default btn-product" href="'.myWeb.$this->lang.'/'.$this->view.'/'.payment_view.'">Gửi đơn hàng</a>
     					</div>							
 					</div>
 				</div>
 			</div>
-    	</section><!--/#do_action-->';
+    	</section><!--/#do_action-->
+        </form>';
+        $str.='
+        
+        <script>
+            $(document).on("click", ".number-spinner button", function () {    
+            var btn = $(this),
+                    oldValue = btn.closest(".number-spinner").find("input").val().trim(),
+                    newVal = 0;
+
+            if (btn.attr("data-dir") == "up") {
+                    newVal = parseInt(oldValue) + 1;
+            } else {
+                    if (oldValue > 1) {
+                            newVal = parseInt(oldValue) - 1;
+                    } else {
+                            newVal = 1;
+                    }
+            }
+            btn.closest(".number-spinner").find("input").val(newVal);           
+
+        });
+            $("#size-product").change(function() {
+                alert("tung" +$(this).val());
+              });
+        </script>';
         return $str;
     }
 }
