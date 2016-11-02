@@ -30,7 +30,6 @@ class career{
         }
         $str.='
         </ul>
-        <h2 class="page-title">'.$this->title.'</h2>
         </div>';
         return $str;
     }

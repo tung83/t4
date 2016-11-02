@@ -27,7 +27,9 @@ define('_hostName'  , 'localhost');
 define('_userName'  , 'tung');	
 define('_dbName'    , 't4vietna_db');	
 define('_pass'      , 'tung');
-
+//define('_userName'  , 't4vietna_admin');	
+//define('_dbName'    , 't4vietna_db');	
+//define('_pass'      , 'wh~g@bk]SWhC');
 
 //define('_userName'  , 'root');	
 //define('_dbName'    , 't4');	
