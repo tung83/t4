@@ -222,7 +222,7 @@ function news($db,$lang){
     $news=new news($db,$lang);
     $str.=$news->breadcrumb();          
     if(isset($_GET['id'])){
-        $str.=$news->news_one();    
+        $str.=$news->news_one(intval($_GET['id']));    
     }else{
         $str.=$news->news_cate();
     }      

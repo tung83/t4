@@ -128,8 +128,7 @@ class news{
         </section>';
         return $str;
     }
-    function news_one(){
-        $id=1;
+    function news_one($id=1){
         $item=$this->db->where('id',$id)->getOne('news');
         $str='<section id="news-item">
         <div class="container">
