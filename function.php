@@ -441,15 +441,14 @@ function cart_count($db){
 }
 function cart_update_multi($db){
     common::load('cart');
-    $obj=new cart($db);
-     if (isset($_POST['submit'])) {
-        if ( isset( $_POST['productItems'] ) )  {            
-            foreach ( $_POST['productItems'] as $item )
-            { 
-                $obj->cart_update($item['id'],$item['qty']);
-            }
-            return true;
+    $obj=new cart($db);        
+             
+    if ( isset( $_POST['productItems'] ) )  {   
+        foreach ( $_POST['productItems'] as $item )
+        { 
+            $obj->cart_update($item['id'],$item['qty']);
         }
+        return true;
     }
     return false;
 }

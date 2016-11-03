@@ -82,7 +82,7 @@ class cart_show{
         if(cart_update_multi($db)){
             $this->cart=$_SESSION['cart'];            
         }
-        $str.='<form action="" method="post">';
+        $str.='<form action="" method="post" id="post-cart">';
         $str.='
         <section id="cart_items">
 			<div class="table-responsive cart_info">
@@ -137,7 +137,7 @@ class cart_show{
 				<p>'.number_format($total,0,',','.').'&nbsp;₫</p>
 			</td>
 			<td class="action-clear">
-				<a href=""><i class="fa fa-trash-o"></i></a>
+				<a href="javaScript:removeItem('.$key.');" ><i class="fa fa-trash-o"></i></a>
 			</td>
                         <input type="hidden"  name="productItems['.$key.'][id]" value="'.$val['id'].'" />
 		</tr>';
@@ -158,7 +158,7 @@ class cart_show{
                                 </div>
                         <div class="chose_area">						
     						<a class="btn btn-default btn-product" href="'.myWeb.'">Tiếp tục mua sắm</a>
-                            <button type="submit"  name="submit" class="btn btn-default btn-product">Cập nhật</button>
+                            <button type="submit"  class="btn btn-default btn-product">Cập nhật</button>
 							<a class="btn btn-default btn-product" href="'.myWeb.$this->lang.'/'.$this->view.'/'.payment_view.'">Gửi đơn hàng</a>
     					</div>							
 					</div>
@@ -166,7 +166,7 @@ class cart_show{
 			</div>
     	</section><!--/#do_action-->
         </form>';
-        $str.='
+        $str.='    
         
         <script>
             $(document).on("click", ".number-spinner button", function () {    
@@ -186,9 +186,16 @@ class cart_show{
             btn.closest(".number-spinner").find("input").val(newVal);           
 
         });
-            $("#size-product").change(function() {
-                alert("tung" +$(this).val());
-              });
+            function removeItem(key){
+                var nameV = "productItems["+key+"][qty]"; 
+                $("input[name=\'"+nameV+"\'").val(0);
+                $("#post-cart")[0].submit();
+            }
+        
+        $("#post-cart").submit(function( event ) {
+            $("#post-cart")[0].submit();
+            event.preventDefault();
+          });      
         </script>';
         return $str;
     }

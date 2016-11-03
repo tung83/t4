@@ -366,6 +366,9 @@ section#ind-news{
 .cart-list .table td {
      vertical-align: middle;
 }
+.action-clear i{
+    font-size: 20px;
+}
 .about-list{
     list-style-type: none;
 }

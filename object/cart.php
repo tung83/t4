@@ -47,7 +47,10 @@ class cart{
     function cart_update($id,$qty){
         $tmp=array();
         foreach($this->cart as $item){
-            if($item['id']==$id){
+            if($item['id']==$id){                
+                if($qty==0){
+                    continue;
+                }
                 array_push($tmp,array('id'=>$item['id'],'qty'=>$qty));
             } else {
                 array_push($tmp,array('id'=>$item['id'],'qty'=>$item['qty']));
