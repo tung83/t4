@@ -220,19 +220,43 @@ function news($db,$lang){
     <section id="news-page">';
     common::page('news');
     $news=new news($db,$lang);
-    $str.=$news->breadcrumb();
-    
+    $str.=$news->breadcrumb();          
+    if(isset($_GET['id'])){
+        $str.=$news->news_one();    
+    }else{
+        $str.=$news->news_cate();
+    }      
     $str.='
     </section>';
     return $str;
 }
 
-function cart($db, $view)
+function promotion($db, $lang)
 {
-    common::load('product','page');
-    $pd=new product($db);
+    common::load('promotion','page');
+    $obj = new promotion($db, $lang);
+    
+    $str.='
+    <div class="container promotion-page">
+        <div class="row">'.$obj->breadcrumb().'</div>
+        <div class="wow fadeInDown row">';
+            
+    if (isset($_GET['id'])) {
+        $str .= $obj->promotion_one($db, intval($_GET['id']));
+    } else {
+        $pId=isset($_GET['pId'])?intval($_GET['pId']):0;
+        $str .= $obj->promotion_cate($pId);
+    }            
+    $str.='
+        </div>
+    </div>';
+    return $str;
+}
+
+function cart($db, $lang)
+{
     common::load('cart_show','page');
-    $cart = new cart_show($db);
+    $cart = new cart_show($db, $lang);
     
     $str.='
     <div class="container cart-list">
@@ -252,21 +276,15 @@ function cart($db, $view)
     return $str;
 }
 
-function payment($db, $view)
+function payment($db, $lang)
 {
-    common::load('product','page');
-    $pd=new product($db);
     common::load('payment','page');
-    $obj = new payment($db);
+    $obj = new payment($db, $lang);
     
     $str.='
     <div class="container all-i-know">
         <div class="row">'.$obj->breadcrumb().'</div>
-        <div class="row">
-            <div class="col-md-3">
-                '.$pd->category(0).'
-            </div>
-            <div class="col-md-9">';
+        <div class="row">';
             
     if (!isset($_GET['id'])) {
         $str .= $obj->payment_all();
@@ -275,7 +293,6 @@ function payment($db, $view)
     }
             
     $str.='
-            </div>
         </div>
     </div>';
     return $str;

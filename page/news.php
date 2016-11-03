@@ -94,7 +94,7 @@ class news{
         </a>';
         return $str;
     }
-    function news_cate($pId){
+    function news_cate($pId =0){
         $page=isset($_GET['page'])?intval($_GET['page']):1;
         $this->db->reset();
         $this->db->where('active',1);
@@ -103,6 +103,10 @@ class news{
         $this->db->pageLimit=limit;
         $list=$this->db->paginate('news',$page);
         $count=$this->db->totalCount;
+        $str='<section id="news-item">
+        <div class="container">
+            <div class="wow fadeInDown row">
+                <div class="col-md-12">';
         if($count>0){
             foreach($list as $item){
                 $str.=$this->news_item($item);
@@ -118,16 +122,29 @@ class news{
             $pg->paginationUrl = myWeb.$this->lang.'/'.$this->view.'/[p]/'.common::slug($cate['title']).'-p'.$cate['id'];
         }
         $str.= '<div class="pagination-centered">'.$pg->process().'</div>';
+        $str.= '</div>
+            </div>
+        </div>
+        </section>';
         return $str;
     }
     function news_one(){
         $id=1;
         $item=$this->db->where('id',$id)->getOne('news');
-        $str='
-        <article class="article">
-            <h1 class="article">'.$item['title'].'</h1>
-            <p>'.$item['content'].'</p>
-        </article>';
+        $str='<section id="news-item">
+        <div class="container">
+            <div class="wow fadeInDown row">
+                <div class="col-md-12">
+                    <article>
+                        <div class="text-center">
+                            <h2 class="page-title">'.$item['title'].'</h2>
+                        </div>
+                        <p>'.$item['content'].'</p>
+                    </article>
+		</div>
+            </div>
+        </div>
+        </section>';
         return $str;
     }
     

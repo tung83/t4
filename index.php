@@ -44,11 +44,15 @@
             break;
         case 'gio-hang':
         case 'cart':
-            echo cart($db,$view);
+            echo cart($db,$lang);
             break;        
         case 'thanh-toan':
         case 'payment':
-            echo payment($db,$view);
+            echo payment($db,$lang);
+            break;
+        case 'khuyen-mai':
+        case 'promotion':            
+            echo promotion($db,$lang);
             break;
         default:
             echo home($db,$lang);

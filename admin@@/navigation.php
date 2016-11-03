@@ -8,12 +8,12 @@ function ad_menu()
                     array(2,'Quản lý sản phẩm',"product","star"),
 					/*array(3,"Quản lý phụ tùng","accessary","pencil"),	*/	
                     array(4,"Giới thiệu","about","fire"),
-                    array(5,'Tin tức - Sự Kiện','news','random'),  
-                    array(6,'Cẩm nang sức khỏe','project','usd'),                      
+                    array(5,'Tin tức - Sự Kiện','news','random'),    
+                    array(6,'Khuyến mãi','promotion','usd'),                      
                     array(8,'Tuyển dụng','career','bell-o'),
                     //array(9,'Video','video','youtube'),
                     /*array(14,'Hỗ trợ trực tuyến','support_online','headphones'),*/
-                    //array(14,'Đặt hàng','cart','shopping-cart'),
+                    array(14,'Đặt hàng','cart','shopping-cart'),
                     array(7,'Liên hệ','contact','plus'),                    
                     array(11,"Pages SEO","seo","fire"),
                     array(12,"Quản lý text","qtext","music"),
@@ -30,9 +30,9 @@ function ad_menu()
                     array(5,'Danh mục tin tức','type=news_cate'),
                     array(5,'Danh sách tin tức','type=news'),  
                     /*array(6,'Danh mục dịch vụ','type=serv_cate'),
-                    array(6,'Danh sách dịch vụ','type=serv'),*/ 
-                    //array(8,'Danh mục khuyến mãi','type=promotion_cate'),
-                    //array(8,'Danh sách khuyến mãi','type=promotion'),   
+                    array(6,'Danh sách dịch vụ','type=serv'),*/      
+                    array(6,'Danh mục khuyến mãi','type=promotion_cate'),
+                    array(6,'Danh sách khuyến mãi','type=promotion'),    
                     array(12,"HotLine","id=2"),
 					array(12,"Liên hệ","id=3"),
                    

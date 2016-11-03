@@ -5,7 +5,7 @@ class promotion{
         $this->db=$db;
         $this->db->reset();
         $this->lang=$lang;
-        $db->where('id',6);
+        $db->where('id',11);
         $item=$db->getOne('menu');
         if($lang=='en'){
             $this->view=$item['e_view'];
