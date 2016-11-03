@@ -78,8 +78,10 @@ class cart_show{
         </div>';
         return $str;
     }
-    function cart_output(){
-        
+    function cart_output($db){
+        if(cart_update_multi($db)){
+            $this->cart=$_SESSION['cart'];            
+        }
         $str.='<form action="" method="post">';
         $str.='
         <section id="cart_items">
@@ -97,7 +99,7 @@ class cart_show{
 					</thead>
 					<tbody>';
      $set=0;
-     foreach($this->cart as $val){
+     foreach($this->cart as $key=>$val){
         $item=$this->db->where('id',$val['id'])->getOne('product','id,title,price,price_reduce');
         common::load('product','page');
         $pd=new product($this->db);
@@ -123,7 +125,7 @@ class cart_show{
                                         <span class="input-group-btn">
                                                 <button type="button" class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                                         </span>
-                                        <input type="text" name="quantity_'.$val['id'].'" id="amount" class="form-control text-center" value="'.$val['qty'].'">
+                                        <input type="text" name="productItems['.$key.'][qty]" id="amount" class="form-control text-center" value="'.$val['qty'].'">
                                         <span class="input-group-btn">
                                                 <button type="button" class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                                         </span>
@@ -137,6 +139,7 @@ class cart_show{
 			<td class="action-clear">
 				<a href=""><i class="fa fa-trash-o"></i></a>
 			</td>
+                        <input type="hidden"  name="productItems['.$key.'][id]" value="'.$val['id'].'" />
 		</tr>';
      }
      $str.='
@@ -155,7 +158,7 @@ class cart_show{
                                 </div>
                         <div class="chose_area">						
     						<a class="btn btn-default btn-product" href="'.myWeb.'">Tiếp tục mua sắm</a>
-                            <button type="submit" class="btn btn-default btn-product">Cập nhật</button>
+                            <button type="submit"  name="submit" class="btn btn-default btn-product">Cập nhật</button>
 							<a class="btn btn-default btn-product" href="'.myWeb.$this->lang.'/'.$this->view.'/'.payment_view.'">Gửi đơn hàng</a>
     					</div>							
 					</div>

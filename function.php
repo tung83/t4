@@ -253,10 +253,10 @@ function promotion($db, $lang)
     return $str;
 }
 
-function cart($db, $lang)
+function cart($db, $lang, $view)
 {
     common::load('cart_show','page');
-    $cart = new cart_show($db, $lang);
+    $cart = new cart_show($db, $view, $lang);
     
     $str.='
     <div class="container cart-list">
@@ -267,7 +267,7 @@ function cart($db, $lang)
                 $str.=$cart->cart_checkout();
                 break;
             default:
-                $str.=$cart->cart_output();
+                $str.=$cart->cart_output($db);
                 break;
     }
     $str.='           
@@ -438,5 +438,19 @@ function cart_count($db){
     common::load('cart');
     $obj=new cart($db);
     return $obj->cart_count();
+}
+function cart_update_multi($db){
+    common::load('cart');
+    $obj=new cart($db);
+     if (isset($_POST['submit'])) {
+        if ( isset( $_POST['productItems'] ) )  {            
+            foreach ( $_POST['productItems'] as $item )
+            { 
+                $obj->cart_update($item['id'],$item['qty']);
+            }
+            return true;
+        }
+    }
+    return false;
 }
 ?>

@@ -91,7 +91,8 @@ function add_cart(id,qty){
         url: "/page/cart.php",
         data: { act : 'add' , product_id : id , product_qty : qty }
     }).done(function( msg ) {
-        $("#cart-count").html(msg);        
+        $("#cart-count").html(msg);     
+        $("#cart-count").removeClass('hidden');
         alert( "Đã thêm sản phẩm vào giỏ hàng!" );
     });
 }

@@ -349,6 +349,10 @@ section#ind-news{
 .thead-default{
     background: #E3F3F1;
 }
+.thead-default th{
+    height: 55px;
+    vertical-align: middle !important;
+}
 .cart-list{
     margin-bottom: 40px;
 }

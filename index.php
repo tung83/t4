@@ -44,7 +44,7 @@
             break;
         case 'gio-hang':
         case 'cart':
-            echo cart($db,$lang);
+            echo cart($db, $lang, $view);
             break;        
         case 'thanh-toan':
         case 'payment':
@@ -133,7 +133,13 @@
       </div>
     </div>
     <div class="float-icon">
-        <a href="<?=common::cart_link($lang)?>"><i class="fa fa-shopping-cart"></i><span id="cart-count" class="user-cart-quantity"><?=cart_count($db)?></span></a>
+        <a href="<?=common::cart_link($lang)?>"><i class="fa fa-shopping-cart"></i>
+            <?php
+                $cart_count = cart_count($db);
+                echo '<span id="cart-count" class="user-cart-quantity'.($cart_count > 0? '' : ' hidden').'">'.$cart_count.'</span>';
+            ?>
+            
+        </a>
         <span data-toggle="modal" data-target="#searchModal"><i class="fa fa-search"></i>        
         </span>
         
