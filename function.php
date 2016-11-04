@@ -99,7 +99,7 @@ function home($db,$lang){
     common::page('news');
     $news=new news($db,$lang);
     $str.=$news->ind_news();
-    
+    $str.=gmap();
     return $str;
 }
 function wow_slider($db){
@@ -175,7 +175,8 @@ function contact($db,$lang){
     $str.=$contact->breadcrumb();
     $str.=$contact->contact();
     $str.='
-    </section>';
+    </section>'; 
+    $str.=gmap();
     return $str;
 }
 function career($db,$lang){
@@ -186,7 +187,7 @@ function career($db,$lang){
     $str.=$career->breadcrumb();
     $str.=$career->career_unique(); 
     $str.='
-    </section>';
+    </section>';   
     return $str;
 }
 function project($db,$lang){
@@ -451,5 +452,41 @@ function cart_update_multi($db){
         return true;
     }
     return false;
+}
+
+function gmap(){      
+    return '<div id="google-map"></div>
+        <script>   
+            function initMap() {
+                var lequangdinh = {lat: 10.798732, lng: 106.687669};
+                var lequangdinhCenter = {lat: 10.798799, lng: 106.687669};
+                var map = new google.maps.Map(document.getElementById("google-map"), {
+                  zoom: 20,
+                  mapTypeControl: false,
+                  fullscreenControl: true,
+                  streetViewControl: false,
+                  center: lequangdinhCenter
+                });
+                var marker = new google.maps.Marker({
+                  position: lequangdinh,
+                  map: map,
+                  title: "336 PHAN XÍCH LONG, PHƯỜNG 7, QUẬN PHÚ NHUẬN"
+                });
+                var lequangdinhContentString = 
+                      "<h4 style=\"color: #2aa498\">T4 Vietnam - Tea</h4>" +
+                      "<p>336 PHAN XÍCH LONG, PHƯỜNG 7, QUẬN PHÚ NHUẬN</p>" +
+                      "<a  target=\"_blank\" href=\"https://www.google.com/maps/place/10%C2%B047\'55.4%22N+106%C2%B041\'15.6%22E/@10.7987615,106.6874546,19.5z/data=!4m5!3m4!1s0x0:0x0!8m2!3d10.798732!4d106.687669\">Get direction</a>";
+
+                  var infowindow = new google.maps.InfoWindow({
+                    content: lequangdinhContentString
+                  });
+                  infowindow.open(map, marker);
+              }
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVWAnZRS56JnP5Nr5otnuzg47TsmJoKBM&callback=initMap">
+        </script>';
+    
+    return $str;
 }
 ?>

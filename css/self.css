@@ -169,7 +169,7 @@ h2.awesome-title{
 }
 h2.awesome-title span{
     border-bottom:3px solid #2aa498;
-    font-size:30px;
+    font-size:1.5em;
     text-transform: uppercase;
 }
 .product-item a{
@@ -311,6 +311,13 @@ section#ind-news{
 .product-detail form{
     margin: 15px 0;
 }
+.product-detail tabs img{
+    max-height: 635px;
+    width: auto;
+}
+#google-map{
+    height: 400px;
+}
 .user-cart-quantity{
     display: block;
     color: #fff;
@@ -377,6 +384,7 @@ section#ind-news{
     margin-top: 20px;
     margin-right: 5px;
 }
+
 
 /*My Define*/
 @media(max-width:991px){

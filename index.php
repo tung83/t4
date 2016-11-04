@@ -50,18 +50,15 @@
         case 'payment':
             echo payment($db,$lang);
             break;
-        case 'khuyen-mai':
-        case 'promotion':            
-            echo promotion($db,$lang);
-            break;
+//        case 'khuyen-mai':
+//        case 'promotion':            
+//            echo promotion($db,$lang);
+//            break;
         default:
             echo home($db,$lang);
             break;
     }
     ?>
-    <section class="gmap">
-        <?=$basic_config['gmap_script']?>
-    </section>
     <footer>
         <div class="container">
             <div class="row footer">

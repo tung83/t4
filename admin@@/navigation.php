@@ -9,7 +9,7 @@ function ad_menu()
 					/*array(3,"Quản lý phụ tùng","accessary","pencil"),	*/	
                     array(4,"Giới thiệu","about","fire"),
                     array(5,'Tin tức - Sự Kiện','news','random'),    
-                    array(6,'Khuyến mãi','promotion','usd'),                      
+                    //array(6,'Khuyến mãi','promotion','usd'),                      
                     array(8,'Tuyển dụng','career','bell-o'),
                     //array(9,'Video','video','youtube'),
                     /*array(14,'Hỗ trợ trực tuyến','support_online','headphones'),*/
