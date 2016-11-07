@@ -9,7 +9,7 @@ class career{
         $item=$db->getOne('menu');
         if($lang=='en'){
             $this->view=$item['e_view'];
-            $this->title=$item['e_title'];
+            $this->title=$item['e_title'];            
         }else{
             $this->view=$item['view'];
             $this->title=$item['title'];
@@ -124,11 +124,12 @@ class career{
     
     function career_unique(){
         $item=$this->db->getOne('career');
+        $content=($this->lang=='en')?$item['e_content']:$item['content'];
         $str='
         <div class="container">
             <div class="row article">
                 <article class="article">
-                    <p>'.$item['content'].'</p>
+                    <p>'.$content.'</p>
                 </article>
             </div>        
         </div>';

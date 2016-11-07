@@ -311,10 +311,7 @@ section#ind-news{
 .product-detail form{
     margin: 15px 0;
 }
-.product-detail #tabs img{
-    max-height: 635px !important;
-    width: auto !important;
-}
+
 #google-map{
     height: 400px;
 }
@@ -398,9 +395,6 @@ section#ind-news{
 @media(min-width:992px){
     .container{
         width:1180px;
-    }
-    #wowslider-container1 { 
-	height:775px;
     }
     header{
         padding:35px 0px;

@@ -32,4 +32,13 @@ define('cart'           ,'Add to cart');
 define('payment_view'           ,'payment');
 define('product_view'           ,'product');
 define('search_view'           ,'search');
+define('lang_contact_thankyou'           ,'Thank you for visiting our website. All information, please contact:');
+define('lang_contact_fillout'           ,'Please fill out the information and messages of customers, our company will reply as soon as possible.');
+define('lang_contact_fullname'           ,'Full name');
+define('lang_contact_phone'           ,'Phone');
+define('lang_contact_address'           ,'Address');
+define('lang_contact_topic'           ,'Topic');
+define('lang_contact_message'           ,'Message content');
+define('lang_contact_delete'           ,'Delete');
+define('lang_contact_send'           ,'Send');
 ?>

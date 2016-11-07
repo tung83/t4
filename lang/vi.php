@@ -35,4 +35,13 @@ define('cart'           ,'Mua hàng');
 define('payment_view'           ,'thanh-toan');
 define('product_view'           ,'san-pham');
 define('search_view'           ,'tim-kiem');
+define('lang_contact_thankyou'           ,'Cảm ơn Quý khách đã truy cập vào website. Mọi thông tin chi tiết xin vui lòng liên hệ:');
+define('lang_contact_fillout'           ,'Hãy điền thông tin và tin nhắn quý khách, BQT sẽ trả lời sớm nhất có thể.');
+define('lang_contact_fullname'           ,'Họ Tên');
+define('lang_contact_phone'           ,'Điện Thoại');
+define('lang_contact_address'           ,'Địa Chỉ');
+define('lang_contact_topic'           ,'Chủ Đề');
+define('lang_contact_message'           ,'Nội Dung Tin Nhắn');
+define('lang_contact_delete'           ,'Xóa');
+define('lang_contact_send'           ,'Gửi Tin');
 ?>
