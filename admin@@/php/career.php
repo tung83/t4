@@ -71,6 +71,8 @@ function career($db)
         $update=array(
             'title'=>$title,'ind'=>$ind,
             'sum'=>$sum,'content'=>$content,
+            'e_title'=>$e_title,
+            'e_sum'=>$e_sum,'e_content'=>$e_content,
             'active'=>$active
         );
         if(common::file_check($_FILES['file'])){
