@@ -32,6 +32,13 @@ define('serv'           ,'Dịch vụ');
 define('news'           ,'Tin tức');
 define('other_article'  ,'Bài viết khác');
 define('cart'           ,'Mua hàng');
+define('sameList'           ,'SẢN PHẨM CÙNG LOẠI');
+define('product_details'           ,'MÔ TẢ CHI TIẾT');
+define('product_comments'           ,'BÌNH LUẬN');
+define('product_quantity'           ,'Số lượng');
+define('product_size'           ,'Kích thước');
+define('product_price'           ,'Giá');
+
 define('payment_view'           ,'thanh-toan');
 define('product_view'           ,'san-pham');
 define('search_view'           ,'tim-kiem');

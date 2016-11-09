@@ -35,7 +35,7 @@ class product{
                                 <i class="fa fa-pencil"></i>Chi Tiết
                             </a>
 							<a href="#" class="btn btn-default add-to-cart">
-                                <i class="fa fa-shopping-cart"></i>Mua Hàng</a>
+                                <i class="fa fa-shopping-cart"></i> '.cart.'</a>
 						</div>
 						<div class="product-overlay">
 							<div class="overlay-content">
@@ -45,7 +45,7 @@ class product{
                                     <i class="fa fa-pencil"></i>Chi Tiết
                                 </a>
 								<a href="#" class="btn btn-default add-to-cart">
-                                <i class="fa fa-shopping-cart"></i>Mua Hàng</a>
+                                <i class="fa fa-shopping-cart"></i> '.cart.'</a>
 							</div>
 						</div>
 				</div>

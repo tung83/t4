@@ -29,6 +29,12 @@ define('search'         ,'Search');
 define('all'            ,'See All');
 define('other_article'  ,'Other Articles');
 define('cart'           ,'Add to cart');
+define('sameList'           ,'People Who Bought This Item Also Bought');
+define('product_details'           ,'Details');
+define('product_comments'           ,'Comments');
+define('product_quantity'           ,'Quantity');
+define('product_price'           ,'Price');
+define('product_size'           ,'Size');
 define('payment_view'           ,'payment');
 define('product_view'           ,'product');
 define('search_view'           ,'search');
@@ -41,4 +47,5 @@ define('lang_contact_topic'           ,'Topic');
 define('lang_contact_message'           ,'Message content');
 define('lang_contact_delete'           ,'Delete');
 define('lang_contact_send'           ,'Send');
+
 ?>
